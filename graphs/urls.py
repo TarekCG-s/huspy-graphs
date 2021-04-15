@@ -3,6 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    path("connectNode/", views.connect_nodes),
+    path("connect-node/", views.connect_nodes),
     path("path/", views.path),
 ]
