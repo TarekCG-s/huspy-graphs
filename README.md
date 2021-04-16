@@ -10,6 +10,8 @@ Uses Breadth First Searching Algorithm.
 ```bash
 pip3 install -r requirements.txt 
 python3 manage.py migrate
+python3 manage.py test 
+#make sure all tests run successfully.
 python3 manage.py runserver
 ```
 
