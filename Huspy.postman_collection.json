@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "18cea042-fa34-4eec-8d37-f92f9198ae79",
+		"name": "Huspy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "connect-node",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"from_node\": \"a\",\n    \"to_node\": \"a\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/connect-node/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"connect-node",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "path",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/path/?from_node=a&to_node=b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"path",
+						""
+					],
+					"query": [
+						{
+							"key": "from_node",
+							"value": "a"
+						},
+						{
+							"key": "to_node",
+							"value": "b"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
