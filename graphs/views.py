@@ -27,7 +27,7 @@ def connect_nodes(request):
 
     from_node.add_adjacent(to_node)
     to_node.add_adjacent(from_node)
-    return Response(request.data, status=200)
+    return Response(request.data, status=201)
 
 
 @api_view(["GET"])
@@ -42,7 +42,7 @@ def path(request):
 
     from_node = nodes.get(from_node)
     if not from_node:
-        return Response({"error": "There's no corresponding from node"}, status=400)
+        return Response({"error": "This from_node doesn't exist"}, status=400)
 
     to_node = request.GET.get("to_node")
     if not to_node:
@@ -50,13 +50,14 @@ def path(request):
 
     to_node = nodes.get(to_node)
     if not to_node:
-        return Response({"error": "There's no corresponding to node"}, status=400)
+        return Response({"error": "This to_node doesn't exist"}, status=400)
 
     path_finder = PathFinding(from_node, to_node)
     path = path_finder.traverse()
     if not path:
         return Response(
-            f"There's no path between nodes {from_node} - {to_node}", status=200
+            {"path": f"There's no path between nodes {from_node} - {to_node}"},
+            status=200,
         )
 
     path = ", ".join(path)
